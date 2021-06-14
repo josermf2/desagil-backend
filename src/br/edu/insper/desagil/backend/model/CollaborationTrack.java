@@ -6,9 +6,9 @@ import java.util.List;
 public class CollaborationTrack extends Track{
 	private List<Artist> collaborators;
 	
-	public CollaborationTrack(Artist artist, String name, int duration, List<Artist> collaborators) {
+	public CollaborationTrack(Artist artist, List<Artist> collaborator, String name, int duration) {
 		super(artist, name, duration);
-		this.collaborators = collaborators;
+		this.collaborators = collaborator;
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class CollaborationTrack extends Track{
 		for (Artist artist : collaborators) {
 			collaboratorsNames.add(artist.getName());
 		}
-		String autores = super.getFullArtistName() + "(feat. " + String.join(",", collaboratorsNames) + ")";
+		String autores = super.getFullArtistName() + " (feat. " + String.join(", ", collaboratorsNames) + ")";
 		return autores;
 	}
 		

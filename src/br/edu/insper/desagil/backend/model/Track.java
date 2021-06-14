@@ -38,7 +38,6 @@ public class Track {
 	
 	public String getFullArtistName() {
 		return this.artist.getName();
-		
 	}
 	
 }
